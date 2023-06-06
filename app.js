@@ -20,4 +20,4 @@ app.get('/api/pokemons', (req, res) => {
 
 app.listen(port, () => console.log(`Our node app is started on http://localhost:${port}`))
 
-// Coded by Sanna Thomas (github.com/wadeekt)
+// Coded by Sanna Thomas (github.com/wadeekt) 😊
