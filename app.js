@@ -15,7 +15,7 @@ app.get('/api/pokemons/:id', (req, res) => {
 });
 
 app.get('/api/pokemons', (req, res) => {
-    res.send(`There are ${pokemons.length} pokemons`)
+    res.send(`There are ${pokemons.length} pokemons on mock-pokemon.js file !`)
 })
 
 app.listen(port, () => console.log(`Our node app is started on http://localhost:${port}`))
