@@ -8,7 +8,7 @@ This is a tutorial for beginners to learn Node.js. It is based on the tutorial f
 To install the project, you need to clone it from GitHub and install the dependencies.
 
 ```bash
-git clone
+git clone 
 cd node-api-basics
 npm install
 ```
