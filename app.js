@@ -21,6 +21,3 @@ app.get('/api/pokemons', (req, res) => {
 app.listen(port, () => console.log(`Our node app is started on http://localhost:${port}`))
 
 // Coded by Sanna Thomas (github.com/wadeekt)
-
-//french version : manipuler les api avec node.js et express.js (pokemon api)
-//english version : manipulate api with node.js and express.js (pokemon api)
