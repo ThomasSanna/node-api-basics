@@ -1,5 +1,3 @@
-// Nodemon is used to not restart the server every time we make a change.
-
 const express = require('express')
 let pokemons = require('./mock-pokemon')
 
