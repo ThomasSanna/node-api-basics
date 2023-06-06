@@ -1,11 +1,26 @@
+// Nodemon is used to not restart the server every time we make a change.
+
 const express = require('express')
+let pokemons = require('./mock-pokemon')
 
 const app = express()
 const port = 3000
 
-app.get("/", (req, res) => res.send('Hello Express 2 !'))
+app.get("/", (req, res) => res.send('Hello Express !'))
 
+app.get('/api/pokemons/:id', (req, res) => {
+    const id = parseInt(req.params.id)
+    const pokemon = pokemons.find(pokemon => pokemon.id === id)
+    res.send(`You asked for pokemon n°${id} which is ${pokemon.name}`)
+});
 
+app.get('/api/pokemons', (req, res) => {
+    res.send(`There are ${pokemons.length} pokemons`)
+})
 
-app.listen(port, () => console.log(`Notre application Node est démarée sur : http://localhost:${port}`))
+app.listen(port, () => console.log(`Our node app is started on http://localhost:${port}`))
 
+// Coded by Sanna Thomas (github.com/wadeekt)
+
+//french version : manipuler les api avec node.js et express.js (pokemon api)
+//english version : manipulate api with node.js and express.js (pokemon api)
