@@ -8,6 +8,8 @@ let pokemons = require('./mock-pokemon')
 const app = express()
 const port = 3000
 
+// INSTALL INSOMNIA (https://insomnia.rest/download/) TO TEST THE API !
+
 app
     .use(favicon(__dirname + '/favicon.ico'))
     .use(morgan('dev'))
