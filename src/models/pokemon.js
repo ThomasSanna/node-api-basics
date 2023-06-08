@@ -23,7 +23,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       types: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        get() {
+          return this.getDataValue('types').split(',') // The get method is used to format the data when it is received from the database
+        },
+        set(types) {
+          this.setDataValue('types', types.join()) // The set method is used to format the data when it is sent to the database
+        }
       }
     }, {
       timestamps: true,
