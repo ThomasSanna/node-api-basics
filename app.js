@@ -2,11 +2,33 @@ const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const favicon = require('serve-favicon')
+const { Sequelize } = require('sequelize')
 const { success, getUniqueID } = require('./helper.js')
 let pokemons = require('./mock-pokemon')
 
+
 const app = express()
 const port = 3000
+
+// CONNEXION TO THE DATABASE
+
+const sequelize = new Sequelize(
+    'pokedex',
+    'root',
+    '',
+    {
+        host: 'localhost',
+        dialect: 'mariadb',
+        dialectOptions: {
+            timezone: 'Etc/GMT-2'
+        },
+        logging: false
+    }
+)
+
+sequelize.authenticate()
+    .then(_ => console.log('The connection to the database has been established'))
+    .catch(error => console.error(`Impossible to connect to the database ${error}`))
 
 // INSTALL INSOMNIA (https://insomnia.rest/download/) TO TEST THE API !
 
