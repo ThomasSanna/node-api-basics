@@ -13,8 +13,8 @@ const sequelize = new Sequelize('pokedex', 'root', '', {
   
 const Pokemon = PokemonModel(sequelize, DataTypes)
   
-const initDb = () => {
-  return sequelize.sync({force: true}).then(_ => {
+const initDb = () => { 
+  return sequelize.sync({force: true}).then(_ => { // force: true will drop the table if it already exists
     pokemons.map(pokemon => {
       Pokemon.create({
         name: pokemon.name,
