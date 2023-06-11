@@ -26,7 +26,7 @@ module.exports = (app) => {
       }
     } 
     else{
-      Pokemon.findAll({ order: ['name'] })
+      Pokemon.findAll({ order: ['name'] }) // localhost:3000/api/pokemons (without any query)
         .then(pokemons => {
           const message = 'List of Pokemons has been found.'
           res.json({ message, data: pokemons })
