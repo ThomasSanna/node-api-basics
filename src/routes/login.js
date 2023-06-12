@@ -5,7 +5,11 @@ const privateKey = require("../auth/private_key");
 
 module.exports = (app) => {
   app.post("/api/login", (req, res) => {
-    User.findOne({ where: { username: req.body.username } })
+    
+    console.log(req.body);
+
+    User.findOne({ where: { username: req.body.username } }) //exemple : { "username": "user1", "password": "password1"}
+
       .then((user) => {
         if (!user) {
           const message = "Username does not exist.";
